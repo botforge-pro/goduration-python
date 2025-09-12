@@ -9,8 +9,13 @@ def parse(duration_str: str) -> timedelta:
     if not s:
         raise ValueError("Empty duration string")
     
+    # Special case for "0"
+    if s == "0":
+        return timedelta(0)
+    
     is_negative = s.startswith('-')
-    if is_negative:
+    is_positive = s.startswith('+')
+    if is_negative or is_positive:
         s = s[1:]
     
     total_minutes = 0
