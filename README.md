@@ -4,6 +4,14 @@
 
 Go-style duration parsing for Python.
 
+## Installation
+
+```bash
+pip install git+https://github.com/botforge-pro/goduration-python
+```
+
+## Usage
+
 ```python
 >>> import goduration
 >>> goduration.parse('1m')
